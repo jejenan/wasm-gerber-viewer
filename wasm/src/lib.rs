@@ -57,7 +57,8 @@ fn set_wasm64_panic_hook_once() {
 }
 
 /// Width of this build's linear-memory addresses in bits: 32 for the wasm32
-/// package, 64 for the memory64 package.
+/// package, 64 for the memory64 package. The viewer reads this to confirm
+/// which binary actually loaded after variant selection or an OOM retry.
 #[wasm_bindgen]
 pub fn memory_address_bits() -> u32 {
     usize::BITS
